@@ -1,0 +1,36 @@
+*{
+	margin:0;
+	padding:0;
+}
+a{
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+img{
+	border:none;
+}
+.header{
+	height: 120px;
+	background:red ;
+}
+.header .headerTop{
+	height: 30px;
+	background: rgb(247, 247, 247);
+}
+.header .headerTop .headerTopCont{
+	width: 1208px;
+	height: 30px;
+	margin:0 auto;
+	background: #ccc;
+}
+/*.header .headerTop .headerTopCont ._left{
+	float: left;
+	line-height: 30px;
+	font-size: 12px;
+}
+.header .headerTop .headerTopCont ._left span{
+	display: inline-block;
+	margin-right:12px;
+}*/
