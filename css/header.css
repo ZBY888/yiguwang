@@ -13,7 +13,6 @@ img{
 }
 .header{
 	height: 120px;
-	background:red ;
 }
 .header .headerTop{
 	height: 30px;
@@ -72,9 +71,8 @@ img{
 	margin-right:25px;
 }
 .header .hedBottom .hedBottombox .hedBottomCenter{
-	width: 561px;
+	width: 566px;
 	height: 32px;
-	background: red;
 	float: left;
 	margin-top:29px;s
 }
