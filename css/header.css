@@ -44,6 +44,9 @@ img{
 .header .headerTop .headerTopCont .soucang a{
 	color:#333;
 }
+.header .headerTop .headerTopCont .soucang a:hover{
+	color:#9fbe06;
+}
 .header .headerTop .headerTopCont ul{
 	float: right;
 }
@@ -56,7 +59,27 @@ img{
 .header .headerTop .headerTopCont ul li a{
 	color:#333;
 }
+.header .headerTop .headerTopCont ul li a:hover{
+	color:#9fbe06;
+}
+.header .headerTop .headerTopCont ul .header_wx{
+	background: url("/yiguwang/images/index/icon.png") no-repeat scroll -30px 4px;
+	padding-left:18px;
+	cursor: pointer;
+	position: relative;
+}
+.header .headerTop .headerTopCont ul .header_wx div{
+	position: absolute;
+	top:26px;
+	right:-88px;
+	z-index: 8;
+	display: none;
+}
+.header .headerTop .headerTopCont ul .header_wx:hover div{
+	display: block;
+}
 .header .hedBottom{
+	width: 100%;
 	height: 90px;
 	background: #e0e0e0;
 }
@@ -133,4 +156,17 @@ img{
 	text-align: center;
 	color:#fd7400;
 	background: url(../images/index/list-arrow.png) no-repeat right 10px;
+}
+
+
+
+
+
+
+/*************************************jqueryCSS*************************************/
+.header_jquery{
+	background:rgba(51,51,51,0.8)!important;
+	position:fixed;
+	top:0;
+	z-index:99999;
 }

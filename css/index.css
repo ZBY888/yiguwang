@@ -15,24 +15,226 @@ img{
 
 
 /*轮播 flash*/
-.img_flash{
-	width: 100%;
-}
-.img_flash ul{
+.index_flash{
 	width: 100%;
 	height: 480px;
 	position: relative;
 }
-.img_flash ul li{
+.index_flash .img_flash{
+	width: 100%;
+	height: 480px;
+	position: absolute;
+}
+.index_flash .img_flash ul{
+	width: 100%;
+	height: 480px;
+}
+.index_flash .img_flash ul li{
 	width: 100%;
 	height: 480px;
 	position: absolute;
 	display: none;
 }
-.img_flash ul .first{
+.index_flash .img_flash ul li a{
+	display: block;
+	height: 480px;
+}
+.index_flash .img_flash ul .first{
 	display: block;
 }
-.img_flash ul li a img{
+.index_flash .img_flash ul li a img{
 	width: 100%;
 	height: 480px;
 }
+
+.index_flash .img_flash #circle{
+	position: absolute;
+	bottom:20px;
+}
+.index_flash .img_flash #circle .circle{
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	border:1px solid #fd7400;
+	float:left;
+	margin:0 5px;
+}
+.index_flash .img_flash #circle .current{
+	background: #fd7400;
+}
+
+.index_flash .index_select{
+	width: 1208px;
+	margin:0 auto;
+	position: relative;
+}
+.index_flash .index_select .index_selectbox{
+	width: 150px;
+	height: 480px;
+	background: #fafafa;
+	position: absolute;
+}
+.index_flash .index_select .index_selectbox ._select{
+	width: 150px;
+	line-height: 40px;
+	text-align: center;
+	color:#fff;
+	font-size: 15px;
+	background: #fd7400;
+	float:left;
+	font-weight:bold;
+	position: absolute;
+	z-index: 999;
+}
+.index_flash .index_select .index_selectbox ._select span{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	float:right;
+	background:url("/yiguwang/images/index/header-img.png") no-repeat -24px 1px;
+	top:18px;
+	right:0px;
+}
+.index_flash .index_select .index_selectbox ul{
+	width: 150px;
+	/*height: 440px;*/
+	background: #fafafa;
+	position: absolute;
+	top:55px;
+}
+.index_flash .index_select .index_selectbox ul li{
+	line-height: 28px;
+	padding:10px 0px 10px 5px;
+	background: #fff;
+	margin:2px 0;
+	position: relative;
+}
+.index_select_jquery{
+	width:130px!important;
+	padding:9px 10px!important;
+	border-top:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	z-index: 10;
+}
+.index_flash .index_select .index_selectbox ul li .index_select_font b{
+	float:left;
+	width: 32px;
+	height: 30px;
+}
+.index_flash .index_select .index_selectbox ul li .index_select_font a{
+	font-size: 14px;
+	color:#000;
+}
+.index_flash .index_select .index_selectbox ul li .index_select_font a:hover{
+	color:#333;
+	font-weight: bold;
+}
+.index_flash .index_select .index_selectbox ul li .index_select_s b{
+	background: url(/yiguwang/images/index/menu_bg.png) no-repeat -30px 0;
+}
+.index_flash .index_select .index_selectbox ul li .index_select_r b{
+	background: url(/yiguwang/images/index/menu_bg.png) no-repeat 0 0;
+}
+.index_flash .index_select .index_selectbox ul li .index_select_ly b{
+	background: url(/yiguwang/images/index/menu_bg.png) no-repeat -62px 0;
+}
+
+.index_flash .index_select .index_selectbox ul li .index_select_no{
+	width: 705px;
+	min-height: 200px;
+	border:1px solid #DDD;
+	border-left:none;
+	box-shadow: 0px 0px 10px #DDDDDD;
+	background: #fff;
+	left:150px;
+	position: absolute;
+	top:-10px;
+	display: none;
+}
+.index_flash .index_select .index_selectbox ul li .index_select_no .left{
+	width: 458px;
+	padding:10px 4px 30px 8px;
+	float:left;
+}
+.index_flash .index_select .index_selectbox ul li .index_select_no .left dl{
+	padding:6px 0;
+	overflow: hidden;
+}
+.index_flash .index_select .index_selectbox ul li .index_select_no .left dl dt{
+	width: 84px;
+	line-height: 22px;
+	text-align: right;
+	float:left;
+	font-weight: 700;
+	margin-right:5px;
+}
+.index_flash .index_select .index_selectbox ul li .index_select_no .left dl dt a{
+	color:#fd7400;
+	text-decoration: underline;
+}
+.index_flash .index_select .index_selectbox ul li .index_select_no .left dl dt a:hover{
+	color:#000;
+}
+.index_flash .index_select .index_selectbox ul li .index_select_no .left dl dd{
+	float:left;
+	line-height: 22px;
+	color:#ccc;
+}
+.index_flash .index_select .index_selectbox ul li .index_select_no .left dl dd a{
+	margin:0 5px;
+	color:#666;
+	line-height: 14px;
+}
+.index_flash .index_select .index_selectbox ul li .index_select_no .left dl dd a:hover{
+	color:#333;
+	text-decoration: underline;
+}
+.index_flash .index_select .index_selectbox ul li .index_select_no .right{
+	float:right;
+	margin:6px 9px;
+	overflow: hidden;
+}
+/*****************************************轮播下一块内容*****************************************/
+.index_two{
+	width: 1208px;
+	margin:0 auto;
+	overflow: hidden;
+}
+.index_two ul li{
+	width: 302px;
+	float:left;
+	position: relative;
+}
+.index_two ul li a{
+	display: block;
+	width: 302px;
+	height: 320px;
+}
+.index_two ul li img{
+	width: 290px;
+	height: 100%;
+}
+.index_two ul li p{
+	width: 270px;
+	height: 104px;
+	position: absolute;
+	bottom:13px;
+	left:10px;
+	background: url(/yiguwang/images/index/pro_hd_bg.png) no-repeat center center;
+}
+.index_two ul li p b{
+	display: block;
+	text-align: center;
+	font-size: 22px;
+	font-weight: bold;
+	color:#575757;
+	margin-top:18px;
+}
+.index_two ul li p span{
+	display: block;
+	text-align: center;
+	font-size: 14px;
+	color:#575757;
+	margin-top:18px;
+}
+
