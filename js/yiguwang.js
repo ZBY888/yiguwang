@@ -103,13 +103,70 @@ $(function(){
 });
 //轮播下一块鼠标移入效果
 $(function(){
-	$("#index_two").delegate("img","mouseenter",function(){
-		$(this).stop().animate({marginLeft:"5px"},"100").siblings().stop().animate({marginLeft:"5px"},"100");
+	$("#index_two").delegate(".index_twobj","mouseenter",function(){
+		$(this).stop().animate({marginLeft:"5px"},"100").children().children("p").stop().animate({left:"13px"});
 	});
-	$("#index_two").delegate("img","mouseleave",function(){
-		$(this).stop().animate({marginLeft:"0"},"100").siblings().stop().animate({marginLeft:"0"},"100");
+	$("#index_two").delegate(".index_twobj","mouseleave",function(){
+		$(this).stop().animate({marginLeft:"0"},"100").children().children("p").stop().animate({left:"10px"});
 	});
 })
-
-
+//商品展示、本周爆品鼠标移入效果
+$(function(){
+	$("#index_bp").delegate("img","mouseenter",function(){
+		$(this).stop().animate({marginLeft:"5px"},"100");
+	});
+	$("#index_bp").delegate("img","mouseleave",function(){
+		$(this).stop().animate({marginLeft:"0"},"100");
+	});
+})
+//商品展示、本周爆品图片轮播效果
+$(function(){
+	var img = $(".right_bottomlft li");
+	var bg = $(".right_bottomlftrit ul li");
+	var len = img.length;
+	var outindex = 0;
+	var inindex = 1;
+	var time;
+//	console.log(img)
+	time = setInterval(timer,3000);
+	$(".right_bottomlft li").hover(function(){
+		clearInterval(time);
+	},function(){
+		time = setInterval(timer,3000);
+	});
+//	$(".right_bottomlftrit").on("mouseenter","li",function(){
+//		clearInterval(time);
+//		if(outindex == $(this).index()){
+//			return;
+//		}else{
+//			inindex = $(this).index();
+//			timer();
+//		}
+//	})
+	$(".right_bottomlftrit ul li").hover(function(){
+		clearInterval(time);
+		if(outindex == $(this).index()){
+			return;
+		}else{
+			inindex = $(this).index();
+			timer();
+		}
+	},function(){
+		time = setInterval(timer,3000);
+	})
+//计时器
+	function timer(){
+		$(img).eq(outindex).fadeOut();
+		$(img).eq(inindex).fadeIn();
+		$(bg).eq(inindex).addClass("right_bottomlftrit_jquery");
+		$(bg).eq(outindex).removeClass("right_bottomlftrit_jquery");
+		outindex = inindex;
+		inindex++;
+		if(inindex == len){
+			inindex = 0;
+		}
+	}
+	
+	
+})
 
