@@ -8,6 +8,8 @@
 		<link rel="stylesheet" type="text/css" href="/yiguwang/css/yiguwang.css"/>
 		<!--<script type="text/javascript" defer async="true" src="/yiguwang/js/require.js"></script>-->
 		<script type="text/javascript" src = "/yiguwang/js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src = "/yiguwang/js/template-native.js"></script>
+		<script type="text/javascript" src = "/yiguwang/js/jquery.cookie.js"></script>
 		<script type="text/javascript" src = "/yiguwang/js/yiguwang.js"></script>
 		
 	</head>
@@ -29,7 +31,7 @@
 			</div>
 			
 			<!--商品-->
-			<div>
+			<div id="shangpin">
 				<div class="shopping">
 					<div class="shopping_check">
 						<label><input type="checkbox" />全选</label>
@@ -70,8 +72,8 @@
 							<a href="">删除</a>
 						</li>
 					</ul>
-				</div>
-				<div class="template template_two">
+				</div>-->
+				<!--<div class="template template_two">
 					<div class="shopping_check">
 						<input type="checkbox" />
 					</div>
@@ -143,5 +145,61 @@
 		
 		
 		<div id="footer" class="footer"></div>
+		
+		
+		<!--*******************************购物车商品模版*******************************-->
+		<script type="text/html" id="shangpinxinxi">
+			<% for(var i = 0, len = products.length; i < len; i++) { 
+				var prod = products[i];
+			%>
+				<div class="template">
+					<div class="shopping_check">
+						<input type="checkbox" />
+					</div>
+					<img src="<%= prod.src %>" title="<%= prod.name %>" alt="" />
+					<div class="img_title">
+						<a href=""><%= prod.name %></a>
+					</div>
+					<ul>
+						<li class="font_color"><%= prod.price %></li>
+						<li>
+							<input class="pag" type="button" name="" id="" value="-" />
+							<input class="num" type="text" name="" id="" value="<%= prod.amount %>" />
+							<input class="pag" type="button" name="" id="" value="+" />
+						</li>
+						<li class="font_color">￥<%= prod.zongprice %></li>
+						<li><%= prod.zongliang %>KG</li>
+						<li>
+							<a class="first" href="">移入收藏</a>
+							<a href="">删除</a>
+						</li>
+					</ul>
+				</div>
+			<% } %>
+		</script>
+		<script type="text/javascript">
+			$(function(){
+				$.cookie.json = true;// 自动在对象与字符串之间解析转换
+				var _products = $.cookie("products") || [];
+				if(_products.length == 0){
+					console.log(1)
+					$(".no_cookie").css("display","block");
+					return;
+				}
+				if(_products.length != 0){
+					$(".no_cookie").css("display","none");
+				}
+				
+//				显示商品信息
+				var data = {
+						products : _products
+					};
+				var html = template("shangpinxinxi",data)
+				$("#shangpin").append(html);
+				
+			})
+			
+			
+		</script>
 	</body>
 </html>

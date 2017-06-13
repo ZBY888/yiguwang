@@ -359,7 +359,7 @@ img{
 	color:#fff;
 	padding-left:100px;
 	font-weight: bold;
-	background: url(/yiguwang/images/index/index-content-two.png) no-repeat 0 0;
+	/*background: url(/yiguwang/images/index/index-content-two.png) no-repeat 0 0;*/
 }
 .fruit_vegetable .left .left_bottom{
 	display: block;
@@ -394,6 +394,7 @@ img{
 	border-right: 1px solid #ddd;
 	border-bottom: 1px solid #ddd;
 	position: relative;
+	overflow: hidden;
 }
 .fruit_vegetable .right .right_top .first_rit>a{
 	display: block;
@@ -404,7 +405,7 @@ img{
 .fruit_vegetable .right .right_top .first_rit h4 a{
 	display: block;
 	position: absolute;
-	bottom:0;
+	bottom:-35px;
 	font-size: 16px;
 	color:#fff;
 	width: 100%;
@@ -412,7 +413,6 @@ img{
 	background: rgba(255, 68, 0, .7);
 	text-align: center;
 	font-weight: normal;
-	display: none;
 }
 .fruit_vegetable .right .right_top .first_rit a img{
 	width: 180px;
@@ -459,7 +459,7 @@ img{
 	color:#fff;
 	padding-left:100px;
 	font-weight: bold;
-	background: url(/yiguwang/images/index/index-content-two.png) no-repeat 0 -92px;
+	/*background: url(/yiguwang/images/index/index-content-two.png) no-repeat 0 -92px;*/
 }
 . .left .left_bottom{
 	display: block;
@@ -484,7 +484,7 @@ img{
 .meat_custard .right .right_rit a{
 	display: block;
 	width: 193px;
-	height: 176.66666666px;
+	height: 175.66666666px;
 	
 }
 .meat_custard .right .right_rit a img{
@@ -544,8 +544,16 @@ img{
 	height: 531px;
 } 
 
-
-
+/********************************右边固定导航栏********************************/
+#index_fixed{
+	position: fixed;
+	width: 40px;
+	height: 100%;
+	top:0;
+	right:0px;
+	background: #000;
+	z-index: 99999;
+}
 
 
 
@@ -556,4 +564,10 @@ img{
 .right_bottomlftrit_jquery{
 	background: url(/yiguwang/images/index/hdzq-ri-botton-bg.png) no-repeat center center;
 	padding:8px 0px;
+}
+.fruit_vegetable_jquery{
+	color:#9fbe06!important;
+}
+.fruit_vegetable_jquery_color{
+	color:#9fbe06!important;
 }

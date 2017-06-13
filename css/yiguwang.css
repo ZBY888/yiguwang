@@ -346,6 +346,7 @@ img{
 .no_cookie{
 	width: 1208px;
 	margin:0 auto;
+	/*display: none;*/
 }
 .no_cookie p{
 	/*height: 46px;*/
@@ -562,8 +563,229 @@ img{
 }
 
 
+/**********************商品详情页面**********************/
+.magnifier{
+	width: 1208px;
+	margin:0 auto;
+	padding-bottom:20px;
+	/*background: #ccc;*/
+	overflow: hidden;
+}
+.magnifier .mag_nav{
+	overflow: hidden;
+}
+.magnifier .mag_nav li{
+	float:left;
+	line-height: 40px;
+	font-size: 16px;
+	
+}
+.magnifier .mag_nav li a{
+	font-size: 14px;
+	color:#333;
+	margin:0 6px;
+}
+.magnifier .shopping_magnifier{
+	width: 1016px;
+	float: left;
+	overflow: hidden;
+	
+}
+.magnifier .shopping_magnifier .shopping_magnifier_lt{
+	float:left;
+}
+.magnifier .shopping_magnifier #zoom_01{
+	width: 483px;
+	height: 483px;
+	border: 1px solid #f5f5f5;
+}
+.magnifier .shopping_magnifier .shopping_magnifier_lt ul{
+	overflow: hidden;
+	margin-top:5px;
+}
+.magnifier .shopping_magnifier .shopping_magnifier_lt ul li{
+	width: 84px;
+	height: 84px;
+	float:left;
+	padding:2px;
+}
+.magnifier .shopping_magnifier .shopping_magnifier_lt ul li img{
+	width: 80px;
+	height: 80px;
+	text-align: center;
+}
+.magnifier .shopping_magnifier .shopping_magnifier_lt ul li:hover img{
+	border:2px solid #FF6600;
+	padding-top: 2px;
+}
+.magnifier .shopping_magnifier .shopping_guide{
+	width: 500px;
+	float:left;
+	margin-left:20px;
+	/*border:1px solid;*/
+}
+.magnifier .shopping_magnifier .shopping_guide h3 b{
+	font-size: 18px;
+	color:#333333;
+}
+.magnifier .shopping_magnifier .shopping_guide h3 span{
+	display: block;
+	color:#777;
+	padding-top:5px;
+}
+.magnifier .shopping_magnifier .shopping_guide .price{
+	padding:0 10px;
+	background: #fdf8f4;
+	margin-top:20px;
+	
+}
+.magnifier .shopping_magnifier .shopping_guide .price .priceTop{
+	margin:5px 0;
+	color:666;
+	padding-top:5px;
+	font-size: 14px;
+}
+.magnifier .shopping_magnifier .shopping_guide .price .priceTop span{
+	text-decoration: line-through;
+}
+.magnifier .shopping_magnifier .shopping_guide .price .priceBot{
+	line-height: 31px;
+	overflow: hidden;
+}
+.magnifier .shopping_magnifier .shopping_guide .price .priceBot>span{
+	float: left;
+	font-size: 14px;
+}
+.magnifier .shopping_magnifier .shopping_guide .price .priceBot b{
+	display: inline-block;
+	color:#fd7400;
+	font-size: 14px;
+	float:left;
+}
+.magnifier .shopping_magnifier .shopping_guide .price .priceBot b span{
+	font-size: 24px;
+}
+.magnifier .shopping_magnifier .shopping_guide .monthlySales{
+	padding:10px 0 10px 75px;
+	border-top:1px dashed #ccc; 
+	border-bottom:1px dashed #ccc; 
+	color:#777;
+}
+.magnifier .shopping_magnifier .shopping_guide .monthlySales span{
+	color:#f60;
+	padding-right:40px;
+}
+.magnifier .shopping_magnifier .shopping_guide .largess{
+	padding-bottom: 5px;
+	border-bottom:1px dashed #ccc; 
+}
+.magnifier .shopping_magnifier .shopping_guide .largess li{
+	padding: 10px 10px 5px 10px;
+	color:#333;
+}
+.magnifier .shopping_magnifier .shopping_guide .largess li b{
+	padding: 2px 5px;
+	background: #fd7400;
+	color:#fff;
+}
+.magnifier .shopping_magnifier .shopping_guide .largess li span{
+	color:#fd7400;
+}
+.magnifier .shopping_magnifier .shopping_guide .item{
+	line-height: 55px;
+	padding:0 10px;
+	font-size: 14px;
+	color:#333;
+}
+.magnifier .shopping_magnifier .shopping_guide .spec{
+	height: 37px;
+	padding:0 10px;
+}
+.magnifier .shopping_magnifier .shopping_guide .spec>span,.magnifier .shopping_magnifier .shopping_guide .number>span{
+	width: 55px;
+	float:left;
+	font-size: 14px;
+	padding:5px 10px 0 0;
+	
+}
+.magnifier .shopping_magnifier .shopping_guide .spec>a{
+	width: 73px;
+	float:left;
+	text-align: center;
+	font-size: 14px;
+	line-height: 23px;
+	padding:0 10px;
+	border: 1px #ccc solid;
+	margin-right:9px;
+}
+.magnifier .shopping_magnifier .shopping_guide .number{
+	height: 57px;
+	padding:0 10px;
+}
+.magnifier .shopping_magnifier .shopping_guide .number dl{
+	float:left;
+}
+.magnifier .shopping_magnifier .shopping_guide .number dl dt{
+	float:left;
+}
+.magnifier .shopping_magnifier .shopping_guide .number dl dt input{
+	width: 53px;
+	line-height: 28px;
+	padding:3px 2px 0 3px;
+	border:1px solid #a7a6ac;
+	color:#666;
+	margin-right:5px;
+}
+.magnifier .shopping_magnifier .shopping_guide .number dl dd{
+	float:left;
+}
+.magnifier .shopping_magnifier .shopping_guide .number dl dd span{
+	display: block;
+	width: 16px;
+	line-height: 12px;
+	border:1px solid #a7a6ab;
+	text-align: center;
+	margin-bottom:5px;
+	cursor: pointer;
+}
+.magnifier .shopping_magnifier .shopping_guide .btn{
+	padding:0 10px;
+}
+.magnifier .shopping_magnifier .shopping_guide .btn a{
+	display: inline-block;
+	width: 160px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 15px;
+	padding:5px;
+	border-radius:3px;
+}
+.magnifier .shopping_magnifier .shopping_guide .btn .btn_lt{
+	background: #fef2e8;
+	border:1px #fd7400 solid;
+	color:#fd7400;
+}
+.magnifier .shopping_magnifier .shopping_guide .btn .btn_lt:hover{
+	color:#aaa;
+}
+.magnifier .shopping_magnifier .shopping_guide .btn .btn_rt{
+	color:#fff;
+	background:url(/yiguwang/images/details/buy-add.png) no-repeat 8px 5px #fd7400;
+	border:1px #e16700 solid;
+	margin-left:38px;
+}
 
 
+
+
+
+
+
+
+/*************************************jquery样式*************************************/
+.mag_navJquery{
+	color:#9fbe06!important;
+}
 
 
 
