@@ -16,7 +16,7 @@ img{
 
 
 
-  /*注册页面*/
+  					/***************************login   登录页面***************************/
 .login{
 	width: 100%;
 	height: 100%;
@@ -107,6 +107,12 @@ img{
 	font-size: 16px;
 	color:#ccc;
 }
+.loginBox ul .six div input{
+	color:white;
+	font-size: 26px;
+	letter-spacing:8px;
+	font-style: italic;
+}
 .loginBox ul .six div{
 	width:200px;
 	height:52px;
@@ -146,7 +152,7 @@ img{
 
 
 
-	/* register  注册页面 */
+					/***************************register  注册页面 ***************************/
 .register{
 	position: fixed;
 	width: 100%;
@@ -207,6 +213,9 @@ img{
 	color:#c9c9c9;
 	border:1px solid #dedede;
 }
+.register_form ul .fore{
+	color:red;
+}
 .register_form ul .five b{
 	float:left;
 	width: 55px;
@@ -223,9 +232,12 @@ img{
 	text-align: center;
 	color:#fff;
 	background: #ff7400;
-	font-size: 18px;
+	font-size: 26px;
 	cursor: pointer;
 	margin-left:10px;
+	letter-spacing:6px;
+	font-style: oblique;
+	text-decoration: line-through;
 }
 .register_form ul .password b{
 	float:left;
@@ -528,6 +540,9 @@ img{
 .shopping_price .right .right_lft .first b{
 	font-size: 24px;
 	margin-left:12px;
+}
+.shopping_price .right .right_lft .first b span{
+	font-size: 24px;
 }
 .shopping_price .right button{
 	line-height: 70px;

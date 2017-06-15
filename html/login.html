@@ -4,10 +4,13 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="/yiguwang/css/yiguwang.css"/>
+		<script type="text/javascript" src="/yiguwang/js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="/yiguwang/js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="/yiguwang/js/yiguwang.js"></script>
 	</head>
 	<body>
 		<div class="login"></div>
-		<form action="" class="loginBox">
+		<div action="" class="loginBox">
 			<ul>
 				<li class="first_img"><a href="http://www.egu365.com/" target="_blank"><img src="/yiguwang/images/login/logo_login.png"/></a></li>
 				<li class="two">
@@ -16,19 +19,19 @@
 				</li>
 				<li class="three">
 					<b></b>
-					<input type="text" id="" placeholder="手机号/用户名" />
+					<input type="text" id="loginPhone" placeholder="手机号/用户名" />
 				</li>
 				<li class="fore">&nbsp;</li>
 				<li class="three five">
 					<b></b>
-					<input type="password" id="" placeholder="密码" />
+					<input type="password" id="loginPassword" placeholder="密码" />
 				</li>
 				<li class="fore">&nbsp;</li>
 				<li class="six">
 					<p>验证码</p>
-					<input type="text" name="" id="" placeholder="验证码" value="" />
+					<input type="text" name="" id="login_code" placeholder="验证码" value="" />
 					<div>
-						<img src="/yiguwang/images/login/checkimage.action"/>
+						<input type="button" name="" id="code" placeholder="验证码" value="" />
 					</div>
 				</li>
 				<li class="fore">&nbsp;</li>
@@ -37,7 +40,7 @@
 					<a href="">忘记密码?</a>
 				</li>
 				<li class="eight">
-					<input type="submit" name="" id="" value="登&nbsp;录" />
+					<input type="submit" name="" id="login_btn" value="登&nbsp;录" />
 				</li>
 				<li>
 					<img src="/yiguwang/images/login/admin-login-san.png"/>
@@ -48,6 +51,6 @@
 					<a href=""><img src="/yiguwang/images/login/login_dou.png"/></a>
 				</li>
 			</ul>
-		</form>
+		</div>
 	</body>
 </html>

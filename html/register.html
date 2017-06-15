@@ -4,12 +4,15 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="/yiguwang/css/yiguwang.css"/>
-		<script type="text/javascript" defer async="true" src="/yiguwang/js/require.js"></script>
-		<script type="text/javascript" src="/yiguwang/js/require.js" data-main="/yiguwang/js/register"></script>
+		<!--<script type="text/javascript" defer async="true" src="/yiguwang/js/require.js"></script>-->
+		<script type="text/javascript" src="/yiguwang/js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="/yiguwang/js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="/yiguwang/js/yiguwang.js"></script>
+		
 	</head>
 	<body>
 		<div class="register"></div>
-		<form action="" class="register_form">
+		<div action="" class="register_form">
 			<ul>
 				<li class="first">
 					<a href="http://www.egu365.com/" target="_blank">
@@ -22,36 +25,36 @@
 				</li>
 				<li class="three">
 					<b></b>
-					<input type="text" id="" placeholder="请输入手机号" />
+					<input type="text" id="phone" placeholder="请输入手机号" />
 				</li>
-				<li class="fore">&nbsp;</li>
+				<li class="fore phone_reg">&nbsp;</li>
 				<li class="five">
 					<b></b>
-					<input class="txt" type="text" id="" placeholder="请输入短信验证码" />
+					<input class="txt" type="text" id="yanzhengma" placeholder="请输入短信验证码" />
 					<!--<button return false>发送验证码</button>-->
-					<input class="button" type="button" name="" id="" value="发送验证码" />
+					<input class="button" type="button" name="" id="code" value="" />
 				</li>
-				<li class="fore">&nbsp;</li>
+				<li class="fore yanzhengma">&nbsp;</li>
 				<li class="password">
 					<b></b>
-					<input type="text" id="" placeholder="请输入密码" />
+					<input type="password" id="password" placeholder="请输入密码" />
 				</li>
-				<li class="fore">&nbsp;</li>
+				<li class="fore password_reg">&nbsp;</li>
 				<li class="password">
 					<b></b>
-					<input type="text" id="" placeholder="请确认密码" />
+					<input type="password" id="password_two" placeholder="请确认密码" />
 				</li>
-				<li class="fore">&nbsp;</li>
+				<li class="fore password_regTwo">&nbsp;</li>
 				<li class="checkbox">
 					<input type="checkbox" checked="checked" name="" id="register_checkbox" value="" />
 					<span><label for="register_checkbox">同意</label><a href="">依谷网服务协议</a></span>
 				</li>
 				<li class="submit">
-					<input type="submit" name="" id="" value="完成" />
+					<input type="submit" name="" id="btn" value="完成" />
 				</li>
 			</ul>
 			
-		</form>
+		</div>
 		
 		
 	</body>

@@ -266,15 +266,12 @@ $(function(){
 			name : $row.children(".shopping_guide").children("h3").children("b").text(),
 			price : $("#price").text(),
 			amount : $("#number input").val(),
-			weight : "1KG",
-			zongprice : parseFloat($("#price").children().text()) * Math.floor($("#number input").val()),
-			zongliang : Math.floor($("#number input").val()) * parseFloat($("#_weight").children("a").eq(0).text())
-		}
+			weight : 1
+		};
 		$.cookie.json = true; // 自动在对象与字符串之间解析转换
 		var _products = $.cookie("products") || [];// 获取 cookie 中保存的购物车信息
 		//判断是否以选购当前商品
 		var _index = indexOf(product.name,_products);
-		console.log(product.zongliang);
 		if(_index === -1){//没有选购
 			_products.push(product);
 		}else{//已选购
@@ -296,5 +293,165 @@ $(function(){
 	})
 })
 
+
+
+//***************************************注册页面验证***************************************
+$(function(){
+//		手机号码验证
+	$("#phone").blur(function(){
+		var phoneReg =/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+		var phoneValue = $("#phone").val();
+		if(phoneReg.test(phoneValue)){
+			$(".phone_reg").text("手机号码正确");
+		}else{
+			$(".phone_reg").text("请输入正确的手机号码");
+		};
+	});
+//		密码验证
+	$("#password").focus(function(){
+		$(".password_reg").text("请输入6-16位由字母、数字、下划线组成的有效字符，并以字母开头");
+	})
+	$("#password").blur(function(){
+		var passwordReg = /^[a-zA-Z]\w{5,15}$/;
+		var passwordValue = $(this).val();
+		if(passwordReg.test(passwordValue)){
+			$(".password_reg").text("正确")
+			return;
+		}else{
+			$(".password_reg").text("格式不正确")
+		};
+	})
+	$("#password_two").focus(function(){
+		$(".password_regTwo").text("请再次输入密码");
+	})
+	$("#password_two").blur(function(){
+		var passwordValue = $("#password").val();
+		if(passwordValue == $(this).val() && $(this).val() != ""){
+			$(".password_regTwo").text("一致");
+		}else{
+			$(".password_regTwo").text("两次密码输入不一致，请重新输入");
+		};
+	})
+//	生成4位验证码
+	function change(){
+	    code=$("#code");
+	  	// 验证码组成库
+	  	var arrays=new Array( 
+	       	'1','2','3','4','5','6','7','8','9','0',
+	       	'a','b','c','d','e','f','g','h','i','j', 
+	       	'k','l','m','n','o','p','q','r','s','t', 
+	       	'u','v','w','x','y','z', 
+	       	'A','B','C','D','E','F','G','H','I','J', 
+	      	'K','L','M','N','O','P','Q','R','S','T', 
+	       	'U','V','W','X','Y','Z'        
+	    ); 
+	    codes='';// 重新初始化验证码
+	   	for(var i = 0; i<4; i++){
+	   	// 随机获取一个数组的下标
+	  	 var r = parseInt(Math.random()*arrays.length);
+	  	 codes += arrays[r];
+	 	}
+	  	// 验证码添加到input里
+	    code.val(codes);
+	}
+	change();
+	code.click(change);
+	//单击验证
+	$("#yanzhengma").focus(function(){
+	   	var inputCode = $(this).val().toUpperCase(); //取得输入的验证码并转化为大写 
+	  	if(inputCode.length == 0) { //若输入的验证码长度为0
+	   		$(".yanzhengma").text("请输入验证码！"); //则弹出请输入验证码
+	  	}
+	})
+	$("#yanzhengma").blur(function(){
+		var inputCode = $(this).val().toUpperCase(); //取得输入的验证码并转化为大写 
+  		if(inputCode!=codes.toUpperCase()) { //若输入的验证码与产生的验证码不一致时
+   		$(".yanzhengma").text("验证码输入错误!请重新输入"); //则弹出验证码输入错误
+   		change();//刷新验证码
+   		$(this).val("");//清空文本框
+	  	}else { //输入正确时
+	   		$(".yanzhengma").text("正确"); //弹出^-^
+	  	};
+  	})
+//	点击完成保存至cookie中
+	$.cookie.json = true;
+	$("#btn").click(function(){
+		if($(".phone_reg").text() == "手机号码正确" && $(".password_regTwo").text() == "一致" && $(".password_reg").text() == "正确" && $(".password_regTwo").text() == "一致" && $("#register_checkbox").prop("checked") == true){
+			var data = {
+					phone : $("#phone").val(),
+					_password : $("#password").val()
+				}
+//			console.log(data)
+			var _products = $.cookie("products_reg") || [];
+			var _index = indexOf(data.phone,_products)
+			if(_index === -1){
+				_products.push(data);
+				alert("注册成功");
+			}else{
+				alert("用户名已存在");
+			};
+			//保存至cookie中
+			$.cookie("products_reg",_products,{expires:7});
+			
+			console.log($.cookie("products_reg"))
+			
+			function indexOf(id,products_reg){
+	//			console.log(id,products_reg)
+				for(var i = 0, len = products_reg.length; i < len; i++){
+					if(id == products_reg[i].phone)
+					return i;
+				}
+					return -1;
+			}
+		}else{
+			alert("检验手机号、密码、验证码是否正确，并勾选服务协议")
+		}
+	})
+	
+})
+//***************************************登录页面验证***************************************
+$(function(){
+	$.cookie.json = true;
+	var _username = $.cookie("username");
+	console.log(_username);
+	if(_username != null){
+		$("#loginPhone").val(_username);
+		$("#login_checkbox").prop("checked",true);
+	}else{
+		$("#login_checkbox").prop("checked",false);
+	}
+	$("#login_btn").click(function(){
+		var login_cookie = $.cookie("products_reg") || [];
+		var login_phone = $("#loginPhone").val();
+		var login_password = $("#loginPassword").val();
+		var _index = indexOf(login_phone,login_cookie);
+		if(_index == -1){
+			alert("用户名不存在");
+		}else{
+			if(login_phone != login_cookie[_index].phone || login_password != login_cookie[_index]._password || $("#login_code").val() != $("#code").val()){
+				alert("用户名或密码、验证码(区分大小写)错误");
+			}else{
+				alert("登录成功");
+				if($("#login_checkbox").prop("checked")){
+					$.cookie("username",login_phone,{expires:7});
+				}else{
+					$.cookie("username",login_phone,{expires:-1});
+				}
+				window.open("/yiguwang/index.html");
+			}
+		}
+	})
+	
+	
+	
+	function indexOf(phone,products){
+		for(var i = 0, len = products.length; i < len; i++){
+			if(phone == products[i].phone){
+				return i;
+			}
+				return -1;
+		}
+	}
+})
 
 
